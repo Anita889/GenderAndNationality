@@ -30,12 +30,12 @@ public class ExportService {
             writer.writeNext(new String[]{"Name", "Surname", "Gender", "Nationality"});
 
             for (Person p : people) {
-                String gender = genderNationalityService.guessGender(p.getName());
-                String nationality = genderNationalityService.guessNationality(p.getSurname());
+                String gender = genderNationalityService.guessGender(p.getFirstName());
+                String nationality = genderNationalityService.guessNationality(p.getLastName());
 
                 writer.writeNext(new String[]{
-                        p.getName(),
-                        p.getSurname(),
+                        p.getFirstName(),
+                        p.getLastName(),
                         gender,
                         nationality
                 });
